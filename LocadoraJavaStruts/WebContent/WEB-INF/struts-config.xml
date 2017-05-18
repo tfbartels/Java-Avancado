@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.0//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_0.dtd">
+
+<struts-config>
+
+  <!-- ========== Form Bean Definitions ============ -->
+  <form-beans>
+  	<form-bean name="veiculosForm" type="br.com.locadora.struts.VeiculosForm" />
+  </form-beans>
+
+
+  <!-- ========== Action Mapping Definitions ======== -->
+  <action-mappings>
+    <action  path="/veiculos" name="veiculosForm" 
+    	type="br.com.locadora.struts.VeiculosAction" >
+
+	    <forward name="success" path="/jsp/MainMenu.jsp" />
+	    <forward name="erro" path="/jsp/LoginView.jsp" />
+	</action>
+	
+  </action-mappings>
+
+</struts-config>

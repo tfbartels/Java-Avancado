@@ -1,0 +1,6 @@
+<Context reloadable="true" privileged="true">
+
+	<ResourceLink name="jdbc/treinamento" global="jdbc/treinamento"
+		auth="Container" type="javax.sql.DataSource" />
+
+</Context>

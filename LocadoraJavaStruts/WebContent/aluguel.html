@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Locadora Java</title>
+
+<style type="text/css">
+table, th, td {
+	border: 0px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 15px;
+}
+</style>
+
+</head>
+<body>
+
+	<h2>Alugar um veiculo</h2>
+
+	<form action="/action_page.php" method="get">
+
+		<table>
+			<tr>
+				<td>Cliente:</td>
+				<td><select>
+						<option value="1">Frodo Baggins</option>
+						<option value="2">Anakin Skywalker</option>
+						<option value="3">Fred Flintstone</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Carro:</td>
+				<td><select>
+						<option value=""></option>
+						<option value="1">Fiat Grand Siena</option>
+						<option value="2">Fiat Palio 2017 4p</option>
+						<option value="3">Volkswagen Fox 2017</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Onibus:</td>
+				<td><select>
+						<option value=""></option>
+						<option value="1">Marcopolo - mini Volare</option>
+						<option value="2">Volvo 101</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>Data Inicio:</td>
+				<td><input type="text" name="dataini"></td>
+			</tr>
+			<tr>
+				<td>Data Fim</td>
+				<td><input type="text" name="datafim"></td>
+			</tr>
+			<tr>
+				<td>Preço:</td>
+				<td><input type="text" name="datafim"></td>
+			</tr>
+		</table>
+
+		<br /> <br /> <input type="submit" value="Registrar">
+	</form>
+
+</body>
+</html>
