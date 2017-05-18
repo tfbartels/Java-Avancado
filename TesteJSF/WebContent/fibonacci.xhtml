@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>JSF Managed Beans Exemplo</title>
+</h:head>
+<h:body>
+	<f:view>
+		<h2>Recupera a posição N da Série de Fibonacci</h2>
+		<p>
+			<h:form id="fibonnaci">
+			Informe a posição desejada:
+			<h:inputText id="number"
+					value="#{managedBeanController.numFibonacci}" />
+				<h:commandButton
+					action="#{managedBeanController.performFibonnaciOperation}"
+					value="Calculate">
+				</h:commandButton>
+				<br />
+			Resultado:
+			<h:outputText id="result" value="#{managedBeanController.result}" />
+				<h:messages infoStyle="color: blue" globalOnly="true" />
+			</h:form>
+		</p>
+	</f:view>
+</h:body>
+</html>
