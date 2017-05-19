@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    <h:head>    	    	
+		<title>Locadora Java</title>
+    </h:head>
+    <h:body>
+
+    	<h1>Alugar um veiculo</h1>
+
+     <h:form>
+     		<h:outputFormat>Clientes: </h:outputFormat>
+     		<h:selectOneMenu>
+     			<f:selectItems value="#{clienteBean.clientes}" />
+     		</h:selectOneMenu>	
+       
+            <h:outputFormat>Veiculos: </h:outputFormat>
+     		<h:selectOneMenu>
+     			<f:selectItems value="#{veiculoBean.veiculos}" />
+     		</h:selectOneMenu>	
+     </h:form>
+   
+     <h:dataTable value="#{aluguelBean.alugueis}" var="aluguel"
+    			styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
+    		
+
+    			<h:column>    		
+    				<f:facet name="header">Cliente</f:facet>    		
+    				#{aluguel.cliente.nome}
+    			</h:column>
+    			
+    			<h:column>    		
+    				<f:facet name="header">Veiculo</f:facet>    		
+    				#{aluguel.veiculo.placa}
+    			</h:column>
+    			
+    			<h:column>    		
+    				<f:facet name="header">Data Início</f:facet>    		
+    				#{aluguel.dataInicio}
+    			</h:column>
+    			
+    			<h:column>    		
+    				<f:facet name="header">Data Fim</f:facet>    		
+    				#{aluguel.dataFim}
+    			</h:column>
+
+    		    <h:column>    		
+    				<f:facet name="header">Preço</f:facet>    		
+    				#{aluguel.preco}
+    			</h:column>
+
+     </h:dataTable>
+
+    </h:body>
+</html>
