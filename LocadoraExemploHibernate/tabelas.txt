@@ -1,0 +1,39 @@
+CREATE TABLE pessoa
+        (      id     numeric(10)     not null,
+               nome_razao   varchar2(50)    not null,
+               cpf_cnpj    varchar2(20),
+			   email VARCHAR(100),
+               CONSTRAINT pessoa_pk PRIMARY KEY (id)
+        );
+		
+CREATE TABLE agenda
+        (      id      numeric(10)     not null,
+		telefone VARCHAR(20) NOT NULL,
+   endereco VARCHAR(50) NOT NULL,
+               pessoa_id     numeric(10)     not null
+               
+        )
+alter table agenda add CONSTRAINT fk_supplier
+                 FOREIGN KEY (pessoa_id)
+                 REFERENCES pessoa(id);
+
+==========================================================
+
+CREATE TABLE pessoa (
+   id INTEGER IDENTITY PRIMARY KEY,
+   nome_razao VARCHAR(50) NOT NULL,
+   cpf_cnpj VARCHAR(20) NOT NULL,
+   email VARCHAR(100)
+);
+
+
+CREATE TABLE agenda (
+   id INTEGER IDENTITY PRIMARY KEY,
+   telefone VARCHAR(20) NOT NULL,
+   endereco VARCHAR(50) NOT NULL,
+   id_pessoa INT NOT NULL
+);
+
+ALTER TABLE PUBLIC.agenda
+ADD FOREIGN KEY (id_pessoa) 
+REFERENCES PUBLIC.pessoa(id);

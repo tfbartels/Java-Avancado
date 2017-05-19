@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<style type="text/css">
+table, th, td {
+	border: 0px solid black;
+	border-collapse: collapse;
+}
+
+th, td {
+	padding: 15px;
+}
+</style>
+
+</h:head>
+<h:body>
+	<h:outputText>${pessoaBean.mensagem}</h:outputText>
+	<h1>Lista de pessoas</h1>
+
+	<h:dataTable value="#{pessoaBean.pessoas}" var="pessoa"
+		styleClass="order-table" headerClass="order-table-header"
+		rowClasses="order-table-odd-row,order-table-even-row">
+
+		<h:column>
+			<f:facet name="header">Codigo</f:facet>
+    		#{pessoa.id}
+    	</h:column>
+		
+		<h:column>
+			<f:facet name="header">Nome</f:facet>
+    		#{pessoa.nome}
+    	</h:column>
+
+		<h:column>
+			<f:facet name="header">CPF</f:facet>
+    				#{pessoa.cpf}
+    	</h:column>
+
+		<h:column>
+			<f:facet name="header">E-mail</f:facet>
+    				#{pessoa.email}
+    	</h:column>
+
+	</h:dataTable>
+
+</h:body>
+</html>
